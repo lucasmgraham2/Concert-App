@@ -1,5 +1,4 @@
 import React from 'react';
-import { registerRootComponent } from 'expo';
 import { NavigationContainer } from '@react-navigation/native';
 import Layout from './_layout';
 
@@ -11,4 +10,4 @@ const App = () => {
   );
 };
 
-registerRootComponent(App);
+export default App;

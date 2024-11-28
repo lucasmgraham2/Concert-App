@@ -1,38 +1,21 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './screens/Home';
-import Profile from './screens/Profile';
-import Memories from './screens/Memories';
-import Community from './screens/Community';
-import ProfileButton from '../components/ProfileButton';
+import Profile from '../app/screens/Profile';
+import BottomTabNavigator from '../components/BottomTabNavigator';
 
 const Stack = createStackNavigator();
 
 const Layout = () => {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Tabs">
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="Tabs"
+        component={BottomTabNavigator}
         options={{
-          headerRight: () => <ProfileButton />,
+          headerShown: false, // Hide the header for the tab navigator
         }}
       />
       <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen
-        name="Memories"
-        component={Memories}
-        options={{
-          headerRight: () => <ProfileButton />,
-        }}
-      />
-      <Stack.Screen
-        name="Community"
-        component={Community}
-        options={{
-          headerRight: () => <ProfileButton />,
-        }}
-      />
     </Stack.Navigator>
   );
 };
